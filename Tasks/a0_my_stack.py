@@ -41,7 +41,10 @@ def peek(ind: int = 0) -> Any:
 	:return: peeked element
 	"""
 	global some_list
-	return some_list[ind]
+	if len(some_list) >= ind:
+		return some_list[ind]
+	else:
+		return None
 
 
 def clear() -> None:
@@ -62,7 +65,7 @@ if __name__=='__main__':
 	print(some_list)
 	print(pop())
 	print(some_list)
-	print(peek(2))
+	print(peek(-1))
 	clear()
 	print(some_list)
 
