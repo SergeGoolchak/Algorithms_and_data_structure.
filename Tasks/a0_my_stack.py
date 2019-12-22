@@ -13,7 +13,6 @@ def push(elem: Any) -> None:
 	"""
 	global some_list
 	some_list.insert(0, elem)
-	print(elem)
 	return None
 
 
@@ -58,15 +57,4 @@ def clear() -> None:
 	return None
 
 if __name__=='__main__':
-	push(9)
-	push(2)
-	push(99)
-	push(14)
-	print(some_list)
-	print(pop())
-	print(some_list)
-	print(peek(-1))
-	clear()
-	print(some_list)
-
-
+	pop()

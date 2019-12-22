@@ -13,7 +13,6 @@ def enqueue(elem: Any) -> None:
 	"""
 	global queue
 	queue.append(elem)
-	print(elem)
 	return None
 
 
@@ -41,7 +40,6 @@ def peek(ind: int = 0) -> Any:
 	"""
 	global queue
 	if len(queue) >= ind:
-		print(ind)
 		return queue[ind]
 	else:
 		return None
@@ -58,13 +56,3 @@ def clear() -> None:
 	return None
 
 if __name__=='__main__':
-	enqueue(9)
-	enqueue(2)
-	enqueue(99)
-	enqueue(14)
-	print(queue)
-	print(dequeue())
-	print(queue)
-	print(peek(-1))
-	clear()
-	print(queue)
