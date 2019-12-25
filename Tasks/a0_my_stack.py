@@ -3,17 +3,18 @@ My little Stack
 """
 from typing import Any
 
-
+some_list = []
 def push(elem: Any) -> None:
 	"""
-	0_0
 	Operation that add element to stack
 
 	:param elem: element to be pushed
 	:return: Nothing
 	"""
-	print(elem)
+	global some_list
+	some_list.insert(0, elem)
 	return None
+
 
 
 def pop() -> Any:
@@ -22,7 +23,13 @@ def pop() -> Any:
 
 	:return: popped element
 	"""
-	return None
+	global some_list
+	if not some_list:
+		return None
+	else:
+		r = some_list[0]
+		del some_list[0]
+		return r
 
 
 def peek(ind: int = 0) -> Any:
@@ -32,8 +39,11 @@ def peek(ind: int = 0) -> Any:
 	:param ind: index of element (count from the top)
 	:return: peeked element
 	"""
-	print(ind)
-	return None
+	global some_list
+	if len(some_list) >= ind:
+		return some_list[ind]
+	else:
+		return None
 
 
 def clear() -> None:
@@ -42,4 +52,9 @@ def clear() -> None:
 
 	:return: None
 	"""
+	global some_list
+	some_list.clear()
 	return None
+
+if __name__=='__main__':
+	pop()
